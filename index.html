@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitudes Simples - 1 Minute</title>
+    <style>
+	
+	  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF6F9; /* Fond pastel rose clair */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+		.categories {
+		margin-bottom: 30px; /* Ajustez cette valeur pour modifier la distance */
+		}
+ 
+        .category {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            background-color: #EAC6DD; /* Mauve clair */
+            color: #4D194D; /* Texte mauve foncé */
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .category:hover {
+            background-color: #D99AC5; /* Accent mauve plus intense */
+        }
+
+        .category.active {
+            background-color: #C08497; /* Rose pastel intense */
+        }
+
+        .habits {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .habit {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            background-color: #F9D3E3; /* Rose clair pastel */
+            color: #5A3D5C; /* Texte rose foncé */
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .habit:hover {
+            transform: scale(1.05);
+            background-color: #F4B6CF; /* Accent rose plus vibrant */
+        }
+
+        .habit.card-flipped {
+            background-color: #F4B6CF;
+            color: #4D194D;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .habits.active {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Habitudes Simples - 1 Minute</h1>
+        <div class="categories">
+            <div class="category" onclick="showHabits('physical', this)">Santé Physique</div>
+            <div class="category" onclick="showHabits('mental', this)">Santé Mentale</div>
+            <div class="category" onclick="showHabits('gratitude', this)">Gratitude & Positivité</div>
+            <div class="category" onclick="showHabits('organization', this)">Organisation</div>
+            <div class="category" onclick="showHabits('energy', this)">Énergie & Bien-être</div>
+            <div class="category" onclick="showHabits('learning', this)">Apprentissage</div>
+        </div>
+
+       
+        <!-- Habits for each category -->
+        <div id="physical" class="habits">
+            <div class="habit" onclick="flipCard(this)">Boire un verre d'eau</div>
+            <div class="habit" onclick="flipCard(this)">10 jumping jacks</div>
+            <div class="habit" onclick="flipCard(this)">Tenez-vous droit(e)</div>
+            <div class="habit" onclick="flipCard(this)">Faites une planche de 30 sec</div>
+            <div class="habit" onclick="flipCard(this)">Étirez vos bras vers le haut</div>
+            <div class="habit" onclick="flipCard(this)">Massez doucement votre cou</div>
+            <div class="habit" onclick="flipCard(this)">Faites 5 squats</div>
+            <div class="habit" onclick="flipCard(this)">Tournez lentement la tête</div>
+            <div class="habit" onclick="flipCard(this)">Marchez sur place pendant 1 minute</div>
+            <div class="habit" onclick="flipCard(this)">Prenez une profonde inspiration et étirez vos épaules</div>
+        </div>
+
+        <div id="mental" class="habits">
+            <div class="habit" onclick="flipCard(this)">Respirez profondément</div>
+            <div class="habit" onclick="flipCard(this)">Fermez les yeux 1 minute</div>
+            <div class="habit" onclick="flipCard(this)">Répétez une affirmation positive</div>
+            <div class="habit" onclick="flipCard(this)">Visualisez un lieu paisible</div>
+            <div class="habit" onclick="flipCard(this)">Méditez en silence</div>
+            <div class="habit" onclick="flipCard(this)">Écoutez de la musique apaisante</div>
+            <div class="habit" onclick="flipCard(this)">Pensez à une chose positive aujourd’hui</div>
+            <div class="habit" onclick="flipCard(this)">Griffonnez ou dessinez quelque chose</div>
+            <div class="habit" onclick="flipCard(this)">Écrivez une idée ou un objectif</div>
+            <div class="habit" onclick="flipCard(this)">Regardez par la fenêtre</div>
+        </div>
+
+        <div id="gratitude" class="habits">
+            <div class="habit" onclick="flipCard(this)">Notez 3 choses positives</div>
+            <div class="habit" onclick="flipCard(this)">Envoyez un message gentil à quelqu’un</div>
+            <div class="habit" onclick="flipCard(this)">Remerciez-vous pour un accomplissement récent</div>
+            <div class="habit" onclick="flipCard(this)">Rappelez-vous une belle expérience</div>
+            <div class="habit" onclick="flipCard(this)">Écrivez une qualité que vous appréciez chez vous</div>
+            <div class="habit" onclick="flipCard(this)">Faites un compliment sincère à quelqu’un</div>
+            <div class="habit" onclick="flipCard(this)">Remerciez mentalement une personne qui vous a aidé(e)</div>
+            <div class="habit" onclick="flipCard(this)">Souriez intentionnellement</div>
+            <div class="habit" onclick="flipCard(this)">Créez une liste mentale de vos réussites</div>
+            <div class="habit" onclick="flipCard(this)">Prenez une minute pour apprécier votre santé</div>
+        </div>
+
+        <div id="organization" class="habits">
+            <div class="habit" onclick="flipCard(this)">Rangez 3 objets dans une pièce</div>
+            <div class="habit" onclick="flipCard(this)">Supprimez 5 e-mails inutiles</div>
+            <div class="habit" onclick="flipCard(this)">Écrivez une tâche à accomplir aujourd’hui</div>
+            <div class="habit" onclick="flipCard(this)">Nettoyez rapidement votre bureau</div>
+            <div class="habit" onclick="flipCard(this)">Organisez un coin de votre maison</div>
+            <div class="habit" onclick="flipCard(this)">Créez une mini-liste de courses</div>
+            <div class="habit" onclick="flipCard(this)">Classez des papiers en attente</div>
+            <div class="habit" onclick="flipCard(this)">Rangez une étagère</div>
+            <div class="habit" onclick="flipCard(this)">Vérifiez votre calendrier pour demain</div>
+            <div class="habit" onclick="flipCard(this)">Notez une chose à faire cette semaine</div>
+        </div>
+
+        <div id="energy" class="habits">
+            <div class="habit" onclick="flipCard(this)">Allumez une lumière douce</div>
+            <div class="habit" onclick="flipCard(this)">Dansez pendant 1 minute</div>
+            <div class="habit" onclick="flipCard(this)">Étirez vos bras et vos jambes</div>
+            <div class="habit" onclick="flipCard(this)">Inspirez une odeur agréable</div>
+            <div class="habit" onclick="flipCard(this)">Buvez une boisson chaude calmante</div>
+            <div class="habit" onclick="flipCard(this)">Posez vos pieds au sol et respirez</div>
+            <div class="habit" onclick="flipCard(this)">Clignez des yeux 10 fois pour reposer votre vue</div>
+            <div class="habit" onclick="flipCard(this)">Marchez dehors 1 minute</div>
+            <div class="habit" onclick="flipCard(this)">Secouez vos bras et vos jambes</div>
+            <div class="habit" onclick="flipCard(this)">Massez vos tempes doucement</div>
+        </div>
+
+        <div id="learning" class="habits">
+            <div class="habit" onclick="flipCard(this)">Lisez une citation inspirante</div>
+            <div class="habit" onclick="flipCard(this)">Apprenez un mot nouveau</div>
+            <div class="habit" onclick="flipCard(this)">Recherchez un sujet intéressant</div>
+            <div class="habit" onclick="flipCard(this)">Posez-vous une question importante</div>
+            <div class="habit" onclick="flipCard(this)">Écoutez une idée clé d’un podcast</div>
+            <div class="habit" onclick="flipCard(this)">Regardez une infographie rapide</div>
+            <div class="habit" onclick="flipCard(this)">Identifiez une chose que vous voulez apprendre cette semaine</div>
+            <div class="habit" onclick="flipCard(this)">Répétez un mot ou une phrase dans une autre langue</div>
+            <div class="habit" onclick="flipCard(this)">Notez une idée qui vous inspire</div>
+            <div class="habit" onclick="flipCard(this)">Observez un objet en détail autour de vous</div>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        function showHabits(category, element) {
+            // Remove active class from all categories
+            document.querySelectorAll('.category').forEach(cat => cat.classList.remove('active'));
+
+            // Add active class to the clicked category
+            element.classList.add('active');
+
+            // Hide all habit groups
+            document.querySelectorAll('.habits').forEach(habits => {
+                habits.classList.remove('active');
+            });
+
+            // Show selected category habits
+            const selectedCategory = document.getElementById(category);
+            if (selectedCategory) {
+                selectedCategory.classList.add('active');
+            } else {
+                console.error(`Category with ID '${category}' not found.`);
+            }
+        }
+		
+		function flipCard(card) {
+    // Dictionnaire des explications
+    const explanations = {
+                "Boire un verre d'eau": "L'hydratation maintient votre corps en équilibre et améliore la concentration.",
+                "10 jumping jacks": "Augmentez rapidement votre circulation sanguine et votre énergie.",
+                "Tenez-vous droit(e)": "Une bonne posture réduit les tensions dorsales.",
+                "Faites une planche de 30 sec": "Renforce vos muscles centraux.",
+                "Étirez vos bras vers le haut": "Libère les tensions accumulées.",
+                "Massez doucement votre cou": "Soulage le stress et améliore la circulation.",
+                "Faites 5 squats": "Active vos jambes et améliore la force.",
+                "Tournez lentement la tête": "Relâche les tensions cervicales.",
+                "Marchez sur place pendant 1 minute": "Un boost rapide pour votre circulation.",
+                "Prenez une profonde inspiration et étirez vos épaules": "Relâche le stress accumulé dans le haut du dos.",
+                "Respirez profondément": "Apprenez à calmer votre esprit avec une respiration lente.",
+                "Fermez les yeux 1 minute": "Permettez à votre cerveau de se recentrer.",
+                "Répétez une affirmation positive": "Renforcez votre confiance avec des mots motivants.",
+                "Visualisez un lieu paisible": "Détendez-vous mentalement en imaginant un endroit calme.",
+                "Méditez en silence": "Une pause mentale rapide et efficace.",
+                "Écoutez de la musique apaisante": "Diminuez le stress en quelques secondes.",
+                "Pensez à une chose positive aujourd’hui": "Appréciez un moment simple.",
+                "Griffonnez ou dessinez quelque chose": "Stimulez votre créativité et apaisez votre esprit.",
+                "Écrivez une idée ou un objectif": "Libérez de l’espace mental.",
+                "Regardez par la fenêtre": "Observez la nature ou le ciel pour un moment de clarté.",
+                "Notez 3 choses positives": "Développez votre gratitude et un état d'esprit positif.",
+                "Envoyez un message gentil à quelqu’un": "Diffusez de la positivité autour de vous.",
+                "Remerciez-vous pour un accomplissement récent": "Valorisez vos efforts.",
+                "Rappelez-vous une belle expérience": "Évoquez un souvenir joyeux pour sourire.",
+                "Écrivez une qualité que vous appréciez chez vous": "Renforcez votre estime personnelle.",
+                "Faites un compliment sincère à quelqu’un": "Propagez de la joie dans votre entourage.",
+                "Remerciez mentalement une personne qui vous a aidé(e)": "Renforcez vos relations.",
+                "Souriez intentionnellement": "Activez votre énergie positive.",
+                "Créez une liste mentale de vos réussites": "Évaluez vos progrès.",
+                "Prenez une minute pour apprécier votre santé": "Reconnaissez ce que votre corps vous offre.",
+                "Rangez 3 objets dans une pièce": "Créez un environnement apaisant.",
+                "Supprimez 5 e-mails inutiles": "Simplifiez votre espace numérique.",
+                "Écrivez une tâche à accomplir aujourd’hui": "Priorisez votre journée.",
+                "Nettoyez rapidement votre bureau": "Libérez de l’espace pour une meilleure concentration.",
+                "Organisez un coin de votre maison": "Petit à petit, tout devient plus clair.",
+                "Créez une mini-liste de courses": "Préparez-vous efficacement.",
+                "Classez des papiers en attente": "Réduisez le désordre administratif.",
+                "Rangez une étagère": "Donnez une nouvelle vie à un espace encombré.",
+                "Vérifiez votre calendrier pour demain": "Préparez-vous mentalement.",
+                "Notez une chose à faire cette semaine": "Simplifiez votre planification.",
+                "Allumez une lumière douce": "Créez une ambiance relaxante.",
+                "Dansez pendant 1 minute": "Libérez des endorphines instantanément.",
+                "Étirez vos bras et vos jambes": "Relâchez les tensions corporelles.",
+                "Inspirez une odeur agréable": "Profitez d’une huile essentielle apaisante.",
+                "Buvez une boisson chaude calmante": "Sentez la chaleur et l’apaisement.",
+                "Posez vos pieds au sol et respirez": "Prenez un moment pour vous ancrer.",
+                "Clignez des yeux 10 fois pour reposer votre vue": "Détendez vos yeux fatigués.",
+                "Marchez dehors 1 minute": "Rechargez votre énergie en prenant l’air.",
+                "Secouez vos bras et vos jambes": "Relâchez les tensions accumulées.",
+                "Massez vos tempes doucement": "Soulagez un stress rapide.",
+                "Lisez une citation inspirante": "Apprenez un nouvel angle de réflexion.",
+                "Apprenez un mot nouveau": "Enrichissez votre vocabulaire.",
+                "Recherchez un sujet intéressant": "Alimentez votre curiosité en 1 minute.",
+                "Posez-vous une question importante": "Explorez votre réflexion intérieure.",
+                "Écoutez une idée clé d’un podcast": "Augmentez votre savoir en un instant.",
+                "Regardez une infographie rapide": "Assimilez des informations utiles.",
+                "Identifiez une chose que vous voulez apprendre cette semaine": "Clarifiez vos objectifs.",
+				 "Répétez un mot ou une phrase dans une autre langue": "Améliorez vos compétences linguistiques avec une pratique rapide.",
+                "Notez une idée qui vous inspire": "Capturez une pensée ou une idée qui stimule votre créativité.",
+                "Observez un objet en détail autour de vous": "Pratiquez la pleine conscience en vous concentrant sur un détail simple."
+           
+                
+    };
+
+    // Basculer entre le texte d'origine et l'explication
+    if (card.classList.contains('card-flipped')) {
+        card.classList.remove('card-flipped');
+        card.textContent = Object.keys(explanations).find(key => explanations[key] === card.textContent) || card.textContent;
+    } else {
+        card.classList.add('card-flipped');
+        card.textContent = explanations[card.textContent] || "Pas d'explication disponible.";
+    }
+}
+
+		
+ 
+    </script>
+</body>
+</html>
